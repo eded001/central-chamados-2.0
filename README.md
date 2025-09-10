@@ -1,11 +1,26 @@
-<div style="text-align:center">
-<h1>Central de Chamados</h1>
-<p> <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" /> <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" /> <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" /> <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" /> <img alt="Express" src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" /> <img alt="Prisma" src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white" /> <img alt="WebSocket" src="https://img.shields.io/badge/WebSocket-007ACC?logo=websocket&logoColor=white" /> </p>
-</div>
+<h1 align="center">Central de Chamados</h1>
 
-A **Central de Chamados** é uma plataforma digital inovadora desenvolvida para modernizar a gestão de demandas públicas.
+<p align="center">
+  <em>Aplicação web de chamados pensada pra redes locais</em>
+</p>
 
-Ela conecta os servidores e equipes de atendimento em tempo real, assegurando que cada solicitação seja registrada, acompanhada e resolvida com **transparência, eficiência e agilidade**.
+<p align="center">
+  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" />
+  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" />
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" />
+  <img alt="Express" src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" />
+  <img alt="Prisma" src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white" />
+  <img alt="WebSocket" src="https://img.shields.io/badge/WebSocket-007ACC?logo=websocket&logoColor=white" />
+</p>
+
+## Sobre
+
+A Central de Chamados é uma plataforma digital avançada que transforma a gestão de demandas internas. Ela integra servidores públicos e equipes de atendimento em tempo real, garantindo que cada solicitação seja registrada, acompanhada e resolvida de forma transparente, ágil e eficiente. Com recursos modernos de comunicação e monitoramento, proporciona maior controle, visibilidade e qualidade no atendimento interno, fortalecendo a eficiência da administração pública.
+
+### Desenvolvedor
+
+A Central de Chamados foi desenvolvida por Edgar Souza, estagiário da secretaria. Você pode conhecer outros projetos e contribuições no GitHub: [eded001](https://github.com/eded001/).
 
 ## Principais recursos
 
