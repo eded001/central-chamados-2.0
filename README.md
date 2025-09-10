@@ -1,7 +1,7 @@
 <h1 align="center">Central de Chamados</h1>
 
 <p align="center">
-  <em>Uma plataforma digital inovadora desenvolvida para modernizar a gestão de demandas públicas</em>
+  <em>Aplicação web de chamados pensada pra redes locais</em>
 </p>
 
 <p align="center">
