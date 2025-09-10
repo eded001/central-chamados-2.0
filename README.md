@@ -18,6 +18,10 @@
 
 A Central de Chamados é uma plataforma digital avançada que transforma a gestão de demandas internas. Ela integra servidores públicos e equipes de atendimento em tempo real, garantindo que cada solicitação seja registrada, acompanhada e resolvida de forma transparente, ágil e eficiente. Com recursos modernos de comunicação e monitoramento, proporciona maior controle, visibilidade e qualidade no atendimento interno, fortalecendo a eficiência da administração pública.
 
+### Desenvolvedor
+
+A Central de Chamados foi desenvolvida por Edgar Souza, estagiário apaixonado por tecnologia e inovação na gestão pública. Você pode conhecer outros projetos e contribuições no GitHub: [eded001](https://github.com/eded001/).
+
 ## Principais recursos
 
 - Registro rápido e simplificado de solicitações pelos cidadãos.
