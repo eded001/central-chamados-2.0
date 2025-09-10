@@ -1,0 +1,39 @@
+{
+  "name": "help-now",
+  "version": "1.0.0",
+  "description": "Help Now – Chamado rápido, resposta imediata.\r O Help Now é uma aplicação web de chamados pensada pra redes locais. Simples, leve e de fácil uso, ele conecta pontos da rede em tempo real através de um WebSocket, garantindo uma comunicação rápida e estável entre usuários e o host.",
+  "scripts": {
+    "dev": "nodemon",
+    "init-js": "node init.js",
+    "prisma-migrate": "cd backend && npx prisma migrate dev --name init",
+    "prisma-generate": "cd backend && npx prisma generate",
+    "init": "npm run init-js && npm run prisma-migrate && npm run prisma-generate",
+    "start": "cd backend && node server.js",
+    "db": "npx prisma studio --schema backend/prisma/schema.prisma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eded001/help-now.git"
+  },
+  "keywords": [],
+  "author": "Ed",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/eded001/help-now/issues"
+  },
+  "homepage": "https://github.com/eded001/help-now#readme",
+  "dependencies": {
+    "@prisma/client": "^6.13.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "joi": "^17.13.3",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "prisma": "^6.13.0"
+  }
+}

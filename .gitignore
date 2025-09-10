@@ -1,0 +1,19 @@
+# node
+node_modules
+package-lock.json
+
+# app
+
+## frontend
+main.constant.js
+
+## backend
+.env
+options.json
+*.sqlite
+migrations
+apps/backend/prisma
+
+## test
+test*
+test
