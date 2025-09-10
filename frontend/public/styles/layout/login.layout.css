@@ -1,0 +1,160 @@
+@import url('../base/variables/client.variable.css');
+@import url('../base/vars.css');
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: var(--color04);
+}
+
+.login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* logo */
+.logo {
+    position: relative;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: 2px solid var(--color11);
+
+    background-color: var(--color03);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 50px;
+
+    user-select: none;
+}
+
+.logo__image {
+    height: 30vmin;
+    width: 30vmin;
+
+    background-color: var(--color05);
+
+    -webkit-mask: url("../../assets/images/logo-prefeitura.png") no-repeat center / contain;
+    mask: url("../../assets/images/logo-prefeitura.png") no-repeat center / contain;
+
+    pointer-events: none;
+}
+
+.logo__title {
+    display: flex;
+    text-align: center;
+    padding: 5px;
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--color05);
+}
+
+.logo__subtitle {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color04);
+}
+
+/* login section */
+.login__section {
+    padding: 50px;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: 2px solid var(--color11);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+
+    background-color: var(--color02);
+}
+
+.login__title {
+    display: grid;
+    place-items: center;
+    font-size: 3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--color04);
+    user-select: none;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.login__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login__input {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color10);
+    color: var(--color08);
+    font-size: 1em;
+    padding: 10px;
+}
+
+.login__input::placeholder {
+    color: var(--color14);
+    user-select: none;
+}
+
+.login__button {
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.3em;
+    background-color: var(--color08);
+    color: var(--color02);
+    width: 100%;
+    border: none;
+}
+
+.login__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.login__link {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color04);
+}
+
+.footer__section {
+    position: absolute;
+
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer__section p {
+    font-family: var(--font-text);
+    color: var(--color09);
+}
+
+.footer__section p a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--color17);
+}
+
+.footer__section p a::after {
+    content: '[link]';
+    display: inline-block;
+    margin-left: 5px;
+}

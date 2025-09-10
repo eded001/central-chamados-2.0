@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Client | Help Now</title>
+    <link rel="shortcut icon" href="assets/images/avatar.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/base/globals/reset.global.css" />
+    <link rel="stylesheet" href="styles/base/globals/element-reset.global.css">
+    <link rel="stylesheet" href="styles/layout/ui/user.ui.css">
+    <link rel="stylesheet" href="styles/layout/client.layout.css" />
+    <link rel="stylesheet" href="styles/base/animations/slide-in-right.animation.css" />
+</head>
+<body>
+    <section class="sidebar">
+        <div class="sidebar__header">
+            <div class="sidebar__header__logo">
+                <div class="sidebar__header-logo-prefeitura"></div>
+            </div>
+
+            <div class="sidebar__header_title">
+                <h1 class="sidebar__header-title">DTI SEMCULT</h1>
+                <h2 class="sidebar__header-subtitle">Central de ajuda</h2>
+            </div>
+        </div>
+
+        <!-- <nav class="sidebar__options">
+            <button class="sidebar__option">Temas</button>
+            <button class="sidebar__option">Avaliação</button>
+            <button class="sidebar__option">Redefinição de senha</button>
+
+            <div class="sidebar__hr"></div>
+
+            <button class="sidebar__option">Dashboard</button>
+            <button class="sidebar__option">Resumo</button>
+        </nav> -->
+
+        <div class="sidebar__section__links-about">
+            <p>Desenvolvido por <a href="https://github.com/eded001" target="_blank">Edgar Souza</a></p>
+            <a href="#" class="sidebar__link__saiba-mais">Saiba mais</a>
+        </div>
+    </section>
+
+    <main class="user">
+        <div class="user__header">
+            <div class="user__greeting slide-in-right">Olá, <span id="name-user"></span><span id="logout"></span></div>
+
+            <div class="user__header-content">
+                <div class="user__presentation">
+                    <h1>Dashboard de chamados</h1>
+                    <p>Este é o seu painel de acompanhamento. Visualize o status das suas solicitações, consulte
+                        detalhes e registre novos chamados sempre que precisar. Nossa equipe está pronta para te
+                        atender com agilidade e precisão.</p>
+                </div>
+
+                <div class="user__support-button">
+                    <button class="support-button">
+                        <span class="support-button__icon" aria-hidden="true">+</span>
+                        <span class="support-button__text">Novo chamado</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="user__tickets">
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" style="display:none;">
+        <div class="modal">
+            <h2 class="modal__title">Novo chamado</h2>
+            <p class="modal__description">Preencha os detalhes do seu chamado para que nossa equipe possa atender você
+                rapidamente.</p>
+
+            <form method="post" class="modal__form" id="ticketForm">
+                <div class="form-group">
+                    <label class="modal__label" for="category">Categoria</label>
+                    <select class="modal__select" id="problem-category" name="category" required>
+                        <option value="" disabled selected>Selecione uma categoria</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="modal__label" for="title">Título do chamado</label>
+                    <input class="modal__input" type="text" id="title" name="title"
+                        placeholder="Ex: Não consigo imprimir na impressora da recepção" required />
+                    <p class="form-helper-text">Seja breve e direto.</p>
+                </div>
+
+                <div class="form-group" style="display: flex;justify-content: space-between;align-items: center;">
+                    <p class="modal__label">Prioridade</p>
+
+                    <span class="modal__priority__section">
+                        <input type="radio" class="modal__input__radio" name="priority" value="LOW" id="priority-low" checked>
+                        <label for="priority-low" class="modal__label-priority">Baixa</label>
+                    </span>
+
+                    <span class="modal__priority__section">
+                        <input type="radio" class="modal__input__radio" name="priority" value="MEDIUM" id="priority-medium">
+                        <label for="priority-medium" class="modal__label-priority">Média</label>
+                    </span>
+
+                    <span class="modal__priority__section">
+                        <input type="radio" class="modal__input__radio" name="priority" value="HIGH" id="priority-high">
+                        <label for="priority-high" class="modal__label-priority">Alta</label>
+                    </span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="modal__button modal__button--cancel" id="closeModalBtn">X</button>
+                    <button type="submit" class="modal__button modal__button--submit" id="submitModalBtn">Criar chamado</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/client/client.script.js"></script>
+    <script type="module" src="./scripts/client/modal.script.js"></script>
+    <script type="module" src="./scripts/client/requestSupport.script.js"></script>
+    <script type="module" src="./scripts/logout.script.js"></script>
+</body>
+</html>

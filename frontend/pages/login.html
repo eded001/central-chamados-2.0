@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Help Now</title>
+    <link rel="shortcut icon" href="./assets/images/icons/user.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/base/globals/reset.global.css">
+    <link rel="stylesheet" href="./styles/base/globals/element-reset.global.css">
+    <link rel="stylesheet" href="./styles/layout/login.layout.css">
+    <!-- <link rel="shortcut icon" href="../../frontend/public/assets/images/icons/user.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../frontend/public/styles/base/globals/reset.global.css">
+    <link rel="stylesheet" href="../../frontend/public/styles/base/globals/element-reset.global.css">
+    <link rel="stylesheet" href="../../frontend/public/styles/layout/login.layout.css"> -->
+</head>
+<body>
+    <section class="login">
+        <div class="logo">
+            <div class="logo__image"></div>
+            <h1 class="logo__title">DTI SEMCULT</h1>
+            <h2 class="logo__subtitle">Central de ajuda</h2>
+        </div>
+
+        <div class="login__section">
+            <div class="login__header">
+                <h1 class="login__title">Acesse sua conta</h1>
+            </div>
+
+            <form class="login__form">
+                <div class="login__fields">
+                    <input type="text" class="login__input" id="user-username" placeholder="Digite seu ID" required
+                        value="edgar_test">
+                    <input type="password" class="login__input" id="user-password" placeholder="Digite sua senha"
+                        autocomplete="current-password" required value="senha123">
+                </div>
+
+                <input type="submit" value="Entrar" class="login__button">
+
+                <div class="login__links">
+                    <a href="/register" class="login__link">Quero me cadastrar</a>
+                    <a href="#" class="login__link">Esqueci minha senha</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer__section">
+        <p>Desenvolvido por <a href="https://github.com/eded001" target="_blank">Edgar Souza</a></p>
+    </footer>
+
+    <script type="module" src="./scripts/login.script.js"></script>
+</body>
+</html>
