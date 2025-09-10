@@ -20,7 +20,7 @@ A Central de Chamados é uma plataforma digital avançada que transforma a gest�
 
 ### Desenvolvedor
 
-A Central de Chamados foi desenvolvida por Edgar Souza, estagiário apaixonado por tecnologia e inovação na gestão pública. Você pode conhecer outros projetos e contribuições no GitHub: [eded001](https://github.com/eded001/).
+A Central de Chamados foi desenvolvida por Edgar Souza, estagiário da secretaria. Você pode conhecer outros projetos e contribuições no GitHub: [eded001](https://github.com/eded001/).
 
 ## Principais recursos
 
