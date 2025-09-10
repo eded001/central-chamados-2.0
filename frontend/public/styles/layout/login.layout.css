@@ -154,7 +154,7 @@ body {
 }
 
 .footer__section p a::after {
-    content: '[link]';
+    /* content: '[link]'; */
     display: inline-block;
     margin-left: 5px;
 }
