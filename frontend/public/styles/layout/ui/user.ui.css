@@ -151,7 +151,6 @@ body::after {
 }
 
 .sidebar__section__links-about a::after {
-    content: '🔗';
     display: inline-block;
     margin-left: 5px;
 }
