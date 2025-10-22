@@ -25,3 +25,4 @@ dist-ssr
 
 # Project
 .env
+package-lock.json
