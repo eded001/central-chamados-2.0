@@ -6,30 +6,11 @@ import * as yup from "yup";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-    CardFooter,
-} from "@/components/ui/card";
-import { Eye, EyeOff } from "lucide-react"; // Ícones modernos
-import { cn } from "@/lib/utils";
-
-// ✅ Schema de validação com Yup
-const schema = yup.object().shape({
-    name: yup.string().min(3, "O nome deve ter no mínimo 3 caracteres.").required("O nome é obrigatório."),
-    email: yup.string().email("Digite um e-mail válido.").required("O e-mail é obrigatório."),
-    password: yup.string().min(6, "A senha deve ter pelo menos 6 caracteres.").required("A senha é obrigatória."),
-    department: yup.string().required("Selecione um departamento."),
-});
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter, } from "@/components/ui/card";
+import { Eye, EyeOff } from "lucide-react";
+import Main from "@/components/Main";
+import { loginSchema } from "@/schemas/user.schema";
 
 export default function Register() {
     const {
@@ -38,52 +19,64 @@ export default function Register() {
         setValue,
         formState: { errors },
     } = useForm({
-        resolver: yupResolver(schema),
+        resolver: yupResolver(loginSchema),
     });
 
     const [showPassword, setShowPassword] = useState(false);
 
     const onSubmit = (data) => {
-        console.log("✅ Dados enviados:", data);
+        console.log("Dados enviados:", data);
         alert(`Usuário ${data.name} cadastrado com sucesso!`);
     };
 
     return (
-        <main className="bg-blue-400 h-screen flex items-center justify-center">
-            <Card className="w-full max-w-md shadow-lg border-none bg-sky-600">
+        <Main>
+            <Card className="w-full max-w-md h-full justify-between shadow-lg border border-sky-200 bg-linear-to-b from-sky-50 to-white">
                 <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-center text-sky-600">
+                    <CardTitle className="text-5xl font-bold text-center text-sky-700">
                         Cadastro
                     </CardTitle>
                 </CardHeader>
 
                 <CardContent>
-                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
                         <div className="space-y-1">
-                            <Label htmlFor="name">Nome completo</Label>
-                            <Input id="name" placeholder="Digite seu nome completo" {...register("name")} />
+                            <Label htmlFor="name" className="text-sky-800">Nome completo</Label>
+                            <Input
+                                id="name"
+                                placeholder="Digite seu nome completo"
+                                className="bg-white border border-sky-300 text-sky-900 placeholder:text-sky-400 focus:border-sky-500 focus:ring-sky-400"
+                                {...register("name")}
+                            />
                             {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
                         </div>
 
                         <div className="space-y-1">
-                            <Label htmlFor="email">E-mail</Label>
-                            <Input id="email" type="email" placeholder="exemplo@empresa.com" {...register("email")} />
+                            <Label htmlFor="email" className="text-sky-800">E-mail</Label>
+                            <Input
+                                id="email"
+                                type="email"
+                                placeholder="exemplo@empresa.com"
+                                className="bg-white border border-sky-300 text-sky-900 placeholder:text-sky-400 focus:border-sky-500 focus:ring-sky-400"
+                                {...register("email")}
+                            />
                             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
                         </div>
 
                         <div className="space-y-1">
-                            <Label htmlFor="password">Senha</Label>
+                            <Label htmlFor="password" className="text-sky-800">Senha</Label>
                             <div className="relative">
                                 <Input
                                     id="password"
                                     type={showPassword ? "text" : "password"}
                                     placeholder="********"
+                                    className="bg-white border border-sky-300 text-sky-900 placeholder:text-sky-400 focus:border-sky-500 focus:ring-sky-400"
                                     {...register("password")}
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700"
+                                    className="absolute inset-y-0 right-3 flex items-center text-sky-500 hover:text-sky-700 transition-colors"
                                 >
                                     {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                                 </button>
@@ -92,12 +85,15 @@ export default function Register() {
                         </div>
 
                         <div className="space-y-1">
-                            <Label htmlFor="department">Departamento</Label>
+                            <Label htmlFor="department" className="text-sky-800">Departamento</Label>
                             <Select onValueChange={(value) => setValue("department", value)}>
-                                <SelectTrigger id="department">
+                                <SelectTrigger
+                                    id="department"
+                                    className="bg-white border border-sky-300 text-sky-900 focus:border-sky-500 focus:ring-sky-400"
+                                >
                                     <SelectValue placeholder="Selecione um departamento" />
                                 </SelectTrigger>
-                                <SelectContent>
+                                <SelectContent className="bg-white text-sky-900 border border-sky-200">
                                     <SelectItem value="ti">TI</SelectItem>
                                     <SelectItem value="financeiro">Financeiro</SelectItem>
                                     <SelectItem value="rh">Recursos Humanos</SelectItem>
@@ -109,17 +105,26 @@ export default function Register() {
 
                         <Button
                             type="submit"
-                            className={cn("w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold")}
+                            className="w-full bg-sky-600 hover:bg-sky-500 text-white font-semibold shadow-md transition-colors"
                         >
-                            Cadastrar
+                            Cadastrar-se
                         </Button>
                     </form>
                 </CardContent>
 
-                <CardFooter className="justify-center text-sm text-gray-500">
-                    <p>Já tem uma conta? Faça login.</p>
+                <CardFooter className="justify-center text-sm">
+                    <p className="text-sky-600">
+                        Já tem uma conta?{" "}
+                        <a href="/login" className="text-sky-500 hover:underline">
+                            Faça o login
+                        </a>
+                    </p>
                 </CardFooter>
             </Card>
-        </main>
+
+            <span>
+
+            </span>
+        </Main>
     );
 }
