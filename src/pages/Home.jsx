@@ -1,7 +1,13 @@
+import Main from "@/components/Main";
+import Sidebar from "@/components/Sidebar";
+import CardContent from "@/components/Content";
+
 export default function Home() {
     return (
-        <>
-            <h1 className="text-2xl text-zinc-500">Tela inicial</h1>
-        </>
+        <Main>
+            <Sidebar />
+
+            <CardContent />
+        </Main>
     );
 }
