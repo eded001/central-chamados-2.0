@@ -1,31 +1,41 @@
-import { Calendar, Home, Inbox, Settings, Plus, Ticket, User, Users, Clock, Archive, Bell, LogOut, AlertCircle, CheckCircle2 } from "lucide-react"
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarSeparator } from "@/components/ui/sidebar"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarSeparator } from "@/components/ui/sidebar";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, } from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+import { Home, Inbox, Settings, User, LogOut, ChevronUp } from "lucide-react";
+
+import { useLocation, Link } from "react-router";
+
+import Logo from "@/components/Logo";
 
 export function AppSidebar() {
+    const location = useLocation();
+    const pathName = location.pathname;
+
     return (
-        <Sidebar collapsible="icon" variant="sidebar">
-            {/* HEADER */}
-            <SidebarHeader className="border-2 border-red-500">
-                <div className="flex items-center gap-2 px-2">
-                    <Ticket className="h-5 w-5" />
-                    <span className="font-semibold">Central de Chamados</span>
+        <Sidebar collapsible="icon" variant="floating">
+            <SidebarHeader>
+                <div className="flex justify-center items-center flex-col gap-2 px-2 min-w-0">
+                    <Logo />
+                    <h1 className="font-semibold text-xl text-center text-zinc-700">
+                        Central de Chamados <br /> <b>SEMCULT</b>
+                    </h1>
                 </div>
             </SidebarHeader>
 
-            <SidebarContent className="border-2 border-green-500">
-                {/* DASHBOARD */}
-                <SidebarGroup className="border-2 border-blue-500">
-                    <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
+            <SidebarContent className="overflow-x-hidden flex items-center">
+                <SidebarSeparator />
+
+                <SidebarGroup>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem>
-                                <SidebarMenuButton asChild isActive>
-                                    <a href="#">
+                                <SidebarMenuButton asChild isActive={pathName === "/"}>
+                                    <Link to="/">
                                         <Home />
                                         <span>Visão Geral</span>
-                                    </a>
+                                    </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                         </SidebarMenu>
@@ -34,156 +44,110 @@ export function AppSidebar() {
 
                 <SidebarSeparator />
 
-                {/* CHAMADOS */}
-                <SidebarGroup className="border-2 border-blue-500">
-                    <div className="flex items-center justify-between">
-                        <SidebarGroupLabel>Chamados</SidebarGroupLabel>
-                        <SidebarGroupAction title="Novo Chamado">
-                            <Plus />
-                            <span className="sr-only">Criar chamado</span>
-                        </SidebarGroupAction>
-                    </div>
-
+                <SidebarGroup>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <Inbox />
-                                        <span>Todos</span>
-                                    </a>
+                                <SidebarMenuButton>
+                                    <Inbox />
+                                    <span>Chamados</span>
                                 </SidebarMenuButton>
-                            </SidebarMenuItem>
 
-                            <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <AlertCircle />
-                                        <span>Abertos</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
+                                <SidebarMenuSub>
+                                    <SidebarMenuSubItem>
+                                        <SidebarMenuSubButton asChild>
+                                            <Link to="/requests">
+                                                <span>Todos</span>
+                                            </Link>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
 
-                            <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <Clock />
-                                        <span>Em Atendimento</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
+                                    <SidebarMenuSubItem>
+                                        <SidebarMenuSubButton asChild>
+                                            <a href="#">
+                                                <span>Abertos</span>
+                                            </a>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
 
-                            <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <CheckCircle2 />
-                                        <span>Resolvidos</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
+                                    <SidebarMenuSubItem>
+                                        <SidebarMenuSubButton asChild>
+                                            <a href="#">
+                                                <span>Em Atendimento</span>
+                                            </a>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
 
-                            <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <Archive />
-                                        <span>Arquivados</span>
-                                    </a>
-                                </SidebarMenuButton>
+                                    <SidebarMenuSubItem>
+                                        <SidebarMenuSubButton asChild>
+                                            <a href="#">
+                                                <span>Resolvidos</span>
+                                            </a>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+
+                                    <SidebarMenuSubItem>
+                                        <SidebarMenuSubButton asChild>
+                                            <a href="#">
+                                                <span>Arquivados</span>
+                                            </a>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                </SidebarMenuSub>
                             </SidebarMenuItem>
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
 
                 <SidebarSeparator />
-
-                {/* AGENDA */}
-                <SidebarGroup className="border-2 border-blue-500">
-                    <SidebarGroupLabel>Agenda</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <Calendar />
-                                        <span>SLAs & Prazos</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-
-                <SidebarSeparator />
-
-                {/* USUÁRIOS */}
-                <SidebarGroup className="border-2 border-blue-500">
-                    <SidebarGroupLabel>Gestão</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <User />
-                                        <span>Meu Perfil</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
-
-                            <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
-                                    <a href="#">
-                                        <Users />
-                                        <span>Equipe</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-
-                <SidebarSeparator />
-
-                {/* loading (skeleton) */}
-                {/* <SidebarGroup>
-                    <SidebarGroupLabel>Carregando</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            <SidebarMenuSkeleton />
-                            <SidebarMenuSkeleton />
-                            <SidebarMenuSkeleton />
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup> */}
             </SidebarContent>
 
-            {/* FOOTER */}
-            <SidebarFooter className="border-2 border-yellow-500">
+            <SidebarFooter className="bg-zinc-200 rounded-b-2xl border-t-2 border-t-zinc-300">
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton asChild>
-                            <a href="#">
-                                <Bell />
-                                <span>Notificações</span>
-                            </a>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <SidebarMenuButton size="lg" className="w-full justify-between">
+                                    <div className="flex items-center gap-3">
+                                        <Avatar className="h-8 w-8">
+                                            <AvatarImage src="/avatar.png" alt="Usuário" />
+                                            <AvatarFallback className="bg-zinc-300">
+                                                <span className="text-zinc-500">EA</span>
+                                            </AvatarFallback>
+                                        </Avatar>
+                                        <div className="flex flex-col text-left text-sm leading-tight">
+                                            <span className="font-medium">Edgar Augusto</span>
+                                            <span className="text-muted-foreground text-xs">
+                                                Dep. de Ação Cultural
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <ChevronUp className="h-4 w-4 text-muted-foreground" />
+                                </SidebarMenuButton>
+                            </DropdownMenuTrigger>
 
-                    <SidebarMenuItem>
-                        <SidebarMenuButton asChild>
-                            <a href="#">
-                                <Settings />
-                                <span>Configurações</span>
-                            </a>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
+                            <DropdownMenuContent className="w-56" align="end" side="top">
+                                <DropdownMenuLabel>Minha conta</DropdownMenuLabel>
+                                <DropdownMenuSeparator />
 
-                    <SidebarMenuItem>
-                        <SidebarMenuButton asChild>
-                            <a href="#">
-                                <LogOut />
-                                <span>Sair</span>
-                            </a>
-                        </SidebarMenuButton>
+                                <DropdownMenuItem>
+                                    <User />
+                                    <span>Perfil</span>
+                                </DropdownMenuItem>
+
+                                <DropdownMenuItem>
+                                    <Settings />
+                                    <span>Configurações</span>
+                                </DropdownMenuItem>
+
+                                <DropdownMenuSeparator />
+
+                                <DropdownMenuItem>
+                                    <LogOut className="text-red-600" />
+                                    <span className="text-red-500 font-semibold">Sair</span>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarFooter>
