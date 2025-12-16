@@ -8,6 +8,7 @@ import Dashboard from "@/pages/Dashboard";
 import Requests from "@/pages/Requests";
 import Settings from "@/pages/Settings";
 import Profile from "@/pages/Profile";
+import Tests from "@/pages/Tests";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="requests" element={<Requests />} />
           <Route path="settings" element={<Settings />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="tests" element={<Tests />} />
         </Route>
       </Routes>
     </BrowserRouter>
