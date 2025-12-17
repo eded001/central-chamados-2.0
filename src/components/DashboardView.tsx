@@ -1,5 +1,5 @@
 import { Clock, MessageSquare, CheckCircle, ChevronRight } from "lucide-react";
-import { NavbarSearch } from "@/components/ui/shadcn-io/navbar-14";
+import { NavbarSearch } from "@/components/ui/navbar-seach";
 import KPICard from "@/components/KPICard";
 import TicketsTable from "@/components/TicketsTable";
 
