@@ -12,15 +12,17 @@ export default function Logo({ color = "bg-zinc-800", size = 50 }: LogoProps) {
         <div style={{ width: size }}>
             <AspectRatio ratio={1}>
                 <div
-                    className={`
-                        w-full h-full ${color}
-                        mask-[url('${image}')]
-                        mask-center mask-no-repeat mask-contain
-                        [-webkit-mask:url('${image}')]
-                        [-webkit-mask-position:center]
-                        [-webkit-mask-repeat:no-repeat]
-                        [-webkit-mask-size:contain]
-                    `}
+                    className={`w-full h-full ${color}`}
+                    style={{
+                        maskImage: `url(${image})`,
+                        maskRepeat: "no-repeat",
+                        maskPosition: "center",
+                        maskSize: "contain",
+                        WebkitMaskImage: `url(${image})`,
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskPosition: "center",
+                        WebkitMaskSize: "contain",
+                    }}
                 />
             </AspectRatio>
         </div>
