@@ -18,7 +18,7 @@ export function AppSidebar() {
             <SidebarHeader>
                 <div className="flex justify-center items-center flex-col gap-2 px-2 min-w-0">
                     <Logo />
-                    <h1 className="font-semibold text-xl text-center text-zinc-700">
+                    <h1 className="font-semibold text-xl text-center text-sky-700">
                         Central de Chamados <br /> <b>SEMCULT</b>
                     </h1>
                 </div>
@@ -119,7 +119,7 @@ export function AppSidebar() {
                 <SidebarSeparator />
             </SidebarContent>
 
-            <SidebarFooter className="bg-zinc-200 rounded-b-2xl border-t-2 border-t-zinc-300">
+            <SidebarFooter className="bg-sky-200 rounded-b-2xl border-t-2 border-t-sky-300">
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <DropdownMenu>
@@ -128,8 +128,8 @@ export function AppSidebar() {
                                     <div className="flex items-center gap-3">
                                         <Avatar className="h-8 w-8">
                                             <AvatarImage src="/avatar.png" alt="Usuário" />
-                                            <AvatarFallback className="bg-zinc-300">
-                                                <span className="text-zinc-500">EA</span>
+                                            <AvatarFallback className="bg-sky-300">
+                                                <span className="text-sky-500">EA</span>
                                             </AvatarFallback>
                                         </Avatar>
                                         <div className="flex flex-col text-left text-sm leading-tight">

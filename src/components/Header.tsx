@@ -13,7 +13,7 @@ export default function Header({ username, onNewTicket, client }: HeaderProps) {
             <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight">
-                        Olá, <code className="text-zinc-600">{username}</code>
+                        Olá, <code className="text-sky-600">{username}</code>
                     </h1>
                     <p className="text-slate-600">
                         Acompanhe e abra chamados de suporte
@@ -25,7 +25,7 @@ export default function Header({ username, onNewTicket, client }: HeaderProps) {
                         onClick={onNewTicket}
                         className="flex items-center gap-2"
                     >
-                        <Plus className="h-4 w-4 text-zinc-300" />
+                        <Plus className="h-4 w-4 text-sky-300" />
                         Novo Chamado
                     </Button>
                 )}

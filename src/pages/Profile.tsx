@@ -20,7 +20,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function HelpdeskProfile() {
     return (
-        <div className="min-h-screen bg-slate-50/50 dark:bg-zinc-950 p-6">
+        <div className="min-h-screen bg-slate-50/50 dark:bg-sky-950 p-6">
             <div className="max-w-6xl mx-auto space-y-6">
 
                 {/* Cabeçalho do Agente (Sem capa, estilo cartão de identificação) */}
@@ -32,7 +32,7 @@ export default function HelpdeskProfile() {
                                 <AvatarFallback>AG</AvatarFallback>
                             </Avatar>
                             {/* Indicador de Status Online */}
-                            <span className="absolute bottom-1 right-1 h-5 w-5 rounded-full bg-green-500 border-4 border-white dark:border-zinc-900" title="Disponível"></span>
+                            <span className="absolute bottom-1 right-1 h-5 w-5 rounded-full bg-green-500 border-4 border-white dark:border-sky-900" title="Disponível"></span>
                         </div>
 
                         <div className="text-center md:text-left space-y-1">
@@ -132,7 +132,7 @@ export default function HelpdeskProfile() {
                                                 { id: 'HD-4031', title: 'Instalação do Adobe Reader', priority: 'Baixa', time: '1h', status: 'Em Progresso' },
                                                 { id: 'HD-4035', title: 'Monitor piscando intermitente', priority: 'Média', time: '2h', status: 'Pendente' },
                                             ].map((ticket) => (
-                                                <div key={ticket.id} className="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-zinc-900 transition-colors">
+                                                <div key={ticket.id} className="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-sky-900 transition-colors">
                                                     <div className="space-y-1">
                                                         <div className="flex items-center gap-2">
                                                             <span className="font-mono text-xs text-muted-foreground">{ticket.id}</span>

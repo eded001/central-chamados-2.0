@@ -11,7 +11,7 @@ export default function DashboardView({ tickets, kpis }: { tickets: Ticket[]; kp
         <div className="space-y-8">
             <NavbarSearch
                 searchPlaceholder="Pesquisar chamados"
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
             />
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -26,7 +26,7 @@ export default function DashboardView({ tickets, kpis }: { tickets: Ticket[]; kp
                         <h2 className="text-xl font-semibold">Chamados</h2>
                         <p className="text-sm text-slate-500">Lista de chamados do usuário</p>
                     </div>
-                    <button className="flex items-center gap-1 text-zinc-600 hover:text-zinc-700">
+                    <button className="flex items-center gap-1 text-sky-600 hover:text-sky-700">
                         Histórico <ChevronRight className="h-4 w-4" />
                     </button>
                 </div>
