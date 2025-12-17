@@ -8,7 +8,7 @@ export default function Layout() {
             <div className="flex bg-zinc-800 w-screen">
                 <AppSidebar />
 
-                <main className="flex-1 bg-white m-2 p-2 rounded-lg overflow-auto">
+                <main className="flex-1 bg-white m-2 rounded-lg">
                     <SidebarTrigger className="mb-4 md:hidden xl:hidden" />
 
                     <Outlet />
