@@ -53,7 +53,7 @@ export default function Tests() {
                         <Button className="w-full" onClick={handleLogin}>Entrar</Button>
                         <div className="text-center mt-2 text-sm text-muted-foreground">
                             Não tem conta?{" "}
-                            <span className="text-blue-500 cursor-pointer" onClick={() => setTab("register")}>
+                            <span className="text-sky-500 cursor-pointer" onClick={() => setTab("register")}>
                                 Criar conta
                             </span>
                         </div>
@@ -67,7 +67,6 @@ export default function Tests() {
                         <Input type="email" placeholder="Email" />
                         <Input type="password" placeholder="Senha" />
 
-                        {/* Combobox funcional */}
                         <Popover open={comboOpen} onOpenChange={setComboOpen}>
                             <PopoverTrigger asChild>
                                 <Button
@@ -114,8 +113,9 @@ export default function Tests() {
                 </TabsContent>
             </Tabs>
 
-            {/* Componente Toaster do Sonner */}
             <Toaster position="top-right" richColors />
+
+            <hr />
         </section>
     )
 }
