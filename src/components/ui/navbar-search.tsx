@@ -29,7 +29,7 @@ export const NavbarSearch = React.forwardRef<HTMLElement, NavbarSearchProps>(
     return (
       <header
         ref={ref}
-        className={cn('px-4 md:px-6', className)}
+        className={cn('', className)}
         {...props}
       >
         <div className="flex h-16 items-center">
