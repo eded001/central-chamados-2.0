@@ -5,7 +5,7 @@ import { Outlet } from "react-router"
 export default function Layout() {
     return (
         <SidebarProvider>
-            <div className="flex bg-sky-800 w-screen">
+            <div className="flex bg-sky-300 w-screen">
                 <AppSidebar />
 
                 <main className="flex-1 bg-white m-2 rounded-lg">

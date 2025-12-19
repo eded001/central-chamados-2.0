@@ -1,7 +1,7 @@
 export function getStatusBadgeVariant(status: string) {
     switch (status.toLowerCase()) {
         case "em aberto":
-            return "border-blue-500 text-blue-500";
+            return "border-sky-500 text-sky-500";
         case "respondido":
             return "border-yellow-500 text-yellow-500";
         case "resolvido":

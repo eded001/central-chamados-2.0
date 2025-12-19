@@ -66,8 +66,8 @@ export default function HelpdeskProfile() {
                                 <p className="text-sm font-medium text-muted-foreground">Chamados Hoje</p>
                                 <p className="text-2xl font-bold">12</p>
                             </div>
-                            <div className="p-2 bg-blue-100 dark:bg-blue-900/20 rounded-full">
-                                <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                            <div className="p-2 bg-sky-100 dark:bg-sky-900/20 rounded-full">
+                                <CheckCircle2 className="h-5 w-5 text-sky-600 dark:text-sky-400" />
                             </div>
                         </CardContent>
                     </Card>
