@@ -69,8 +69,8 @@ export default function AuthPage() {
         <div className="min-h-screen flex items-center justify-center relative bg-background font-sans overflow-hidden p-4">
 
             {/* Background Decorativo */}
-            <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-sky-950 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-                <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-blue-500/20 opacity-20 blur-[100px]"></div>
+            <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-sky-950 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]">
+                <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-77.5 w-77.5 rounded-full bg-sky-500/20 opacity-20 blur-[100px]"></div>
             </div>
 
             <div className="w-full max-w-md mx-auto z-10">
@@ -147,7 +147,7 @@ export default function AuthPage() {
                                                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                             </Button>
                                         </PopoverTrigger>
-                                        <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+                                        <PopoverContent className="w-(--radix-popover-trigger-width) p-0">
                                             <Command>
                                                 <CommandInput placeholder="Pesquise seu departamento..." className="h-9" />
                                                 <CommandList>

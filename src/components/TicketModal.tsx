@@ -53,7 +53,7 @@ export default function TicketModal() {
         <AlertDialog open={open} onOpenChange={setOpen}>
             <AlertDialogContent className="sm:max-w-lg w-full">
                 <AlertDialogHeader>
-                    <Headset className="text-primary w-6 h-6" />
+                    <Headset className="w-6 h-6 text-primary" />
                     <AlertDialogTitle>Registrar chamado</AlertDialogTitle>
                     <AlertDialogDescription>
                         Preencha os detalhes do seu chamado técnico e envie para o departamento responsável.
@@ -91,7 +91,7 @@ export default function TicketModal() {
                                 <ChevronsUpDown className="ml-2 opacity-50 w-4 h-4" />
                             </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-full p-0">
+                        <PopoverContent className="p-0">
                             <Command>
                                 <CommandInput placeholder="Pesquisar..." className="h-9" />
                                 <CommandList>
@@ -123,9 +123,9 @@ export default function TicketModal() {
                     </Popover>
                 </div>
 
-                <AlertDialogFooter className="mt-4">
                     <AlertDialogCancel onClick={() => setOpen(false)}>Cancelar</AlertDialogCancel>
                     <AlertDialogAction onClick={handleSubmit}>Enviar chamado</AlertDialogAction>
+                <AlertDialogFooter className="mt-6">
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

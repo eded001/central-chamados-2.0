@@ -3,7 +3,7 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupConte
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import { Home, Inbox, Settings, User, LogOut, ChevronUp, TestTube } from "lucide-react";
+import { Home, Inbox, Settings, User, LogOut, TestTube, EllipsisVertical } from "lucide-react";
 
 import { useLocation, Link } from "react-router";
 
@@ -119,27 +119,28 @@ export function AppSidebar() {
                 <SidebarSeparator />
             </SidebarContent>
 
-            <SidebarFooter className="bg-sky-200 rounded-b-2xl border-t-2 border-t-sky-300">
+            <SidebarFooter className="bg-sky-200 m-2 p-0 rounded-2xl border-2 border-sky-300">
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <SidebarMenuButton size="lg" className="w-full justify-between">
                                     <div className="flex items-center gap-3">
-                                        <Avatar className="h-8 w-8">
+                                        <Avatar className="h-8 w-8 border-2 border-sky-400">
                                             <AvatarImage src="/avatar.png" alt="Usuário" />
                                             <AvatarFallback className="bg-sky-300">
                                                 <span className="text-sky-500">EA</span>
                                             </AvatarFallback>
                                         </Avatar>
                                         <div className="flex flex-col text-left text-sm leading-tight">
-                                            <span className="font-medium">Edgar Augusto</span>
-                                            <span className="text-muted-foreground text-xs">
+                                            <span className="font-medium text-sky-900">Edgar Augusto</span>
+                                            <span className="text-sky-800 text-xs">
                                                 Dep. de Ação Cultural
                                             </span>
                                         </div>
                                     </div>
-                                    <ChevronUp className="h-4 w-4 text-muted-foreground" />
+
+                                    <EllipsisVertical className="text-sky-500" />
                                 </SidebarMenuButton>
                             </DropdownMenuTrigger>
 
@@ -153,7 +154,7 @@ export function AppSidebar() {
                                 </DropdownMenuItem>
 
                                 <DropdownMenuItem>
-                                    <Settings />
+                                    <Settings className="mr-2" />
                                     <span>Configurações</span>
                                 </DropdownMenuItem>
 
