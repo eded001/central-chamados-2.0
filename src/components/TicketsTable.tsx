@@ -1,10 +1,26 @@
 import { getStatusBadgeVariant } from "@/utils/getStatusBadgeVariant";
 
 import type { Ticket } from "@/types/ticket.type";
+import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
+import { Ticket as IconTicket } from "lucide-react";
 
 export default function TicketsTable({ tickets }: { tickets: Ticket[] }) {
     if (tickets.length === 0) {
-        return <p className="text-sm text-slate-500">Nenhum chamado encontrado.</p>;
+        return (
+            <Empty className="p-0">
+                <EmptyHeader>
+                    <EmptyMedia variant="icon">
+                        <IconTicket />
+                    </EmptyMedia>
+
+                    <EmptyTitle>Nenhum chamado encontrado</EmptyTitle>
+
+                    <EmptyDescription>
+                        Ainda não há chamados registrados ou nenhum corresponde à busca.
+                    </EmptyDescription>
+                </EmptyHeader>
+            </Empty>
+        )
     }
 
     return (
