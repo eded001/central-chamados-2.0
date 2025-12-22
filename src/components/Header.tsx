@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
     username: string;
-    onNewTicket: () => void;
     client: boolean
 }
 
@@ -19,16 +18,6 @@ export default function Header({ username, onNewTicket, client }: HeaderProps) {
                         Acompanhe e abra chamados de suporte
                     </p>
                 </div>
-
-                {client && (
-                    <Button
-                        onClick={onNewTicket}
-                        className="flex items-center gap-2"
-                    >
-                        <Plus className="h-4 w-4 text-sky-300" />
-                        Novo Chamado
-                    </Button>
-                )}
             </div>
         </header>
     );
