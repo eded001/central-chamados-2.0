@@ -4,6 +4,7 @@ import DashboardView from "@/components/DashboardView"
 import type { KPIs } from "@/types/kpi.type"
 import type { Ticket } from "@/types/ticket.type"
 
+export default function Home() {
     const tickets: Ticket[] = []
     const kpis: KPIs = {
         open: 0,
