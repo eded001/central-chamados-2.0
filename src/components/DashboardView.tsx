@@ -1,5 +1,6 @@
-import { Clock, MessageSquare, CheckCircle, ChevronRight } from "lucide-react";
-import { NavbarSearch } from "@/components/ui/navbar-seach";
+import { Clock, MessageSquare, CheckCircle } from "lucide-react";
+
+import { NavbarSearch } from "@/components/ui/navbar-search";
 import KPICard from "@/components/KPICard";
 import TicketsTable from "@/components/TicketsTable";
 import { CreateTicketDialog } from "@/components/CreateTicketDialog";
@@ -67,10 +68,8 @@ Descrição: ${data.description ?? "N/A"}`
                         <h2 className="text-xl font-semibold">Chamados</h2>
                         <p className="text-sm text-slate-500">Lista de chamados do usuário</p>
                     </div>
-                    <button className="flex items-center gap-1 text-sky-600 hover:text-sky-700">
-                        Histórico <ChevronRight className="h-4 w-4" />
-                    </button>
                 </div>
+
                 <div className="p-6">
                     <TicketsTable tickets={tickets} />
                 </div>
