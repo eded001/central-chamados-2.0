@@ -5,7 +5,7 @@ interface LogoProps {
     size?: number;
 }
 
-export default function Logo({ color = "bg-sky-800", size = 50 }: LogoProps) {
+export default function Logo({ color = "bg-sky-800", size = 150 }: LogoProps) {
     const image = "https://raw.githubusercontent.com/semcult-belem/central-chamados/refs/heads/main/frontend/public/assets/images/logo-prefeitura.png";
 
     return (

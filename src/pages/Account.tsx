@@ -1,26 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
-import {
-    Command,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-} from "@/components/ui/command"
-import { ArrowLeft, Check, ChevronsUpDown, Loader2 } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, } from "@/components/ui/command"
+import { Check, ChevronsUpDown, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// --- DADOS MOCKADOS ---
 const departments = [
     "Gabinete",
     "Financeiro",
@@ -31,7 +19,6 @@ const departments = [
     "Projetos Culturais",
 ]
 
-// --- COMPONENTE DE LOGO ---
 function Logo({ color = "bg-sky-800", size = 150 }: { color?: string; size?: number }) {
     const image = "https://raw.githubusercontent.com/semcult-belem/central-chamados/refs/heads/main/frontend/public/assets/images/logo-prefeitura.png";
     return (

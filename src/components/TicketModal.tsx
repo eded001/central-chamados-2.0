@@ -13,8 +13,9 @@ import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
-export default function TicketModal() {
-    const [open, setOpen] = useState(true);
+import type { TicketModalProps } from "@/interfaces/TicketModalProps";
+
+export default function TicketModal({ open, onClose }: TicketModalProps) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [email, setEmail] = useState("");
@@ -38,11 +39,8 @@ export default function TicketModal() {
             return;
         }
 
-        // Aqui você pode integrar com API ou backend
         toast.success("Chamado enviado com sucesso!");
-        setOpen(false);
 
-        // Resetar formulário
         setTitle("");
         setDescription("");
         setEmail("");
@@ -123,8 +121,6 @@ export default function TicketModal() {
                     </Popover>
                 </div>
 
-                    <AlertDialogCancel onClick={() => setOpen(false)}>Cancelar</AlertDialogCancel>
-                    <AlertDialogAction onClick={handleSubmit}>Enviar chamado</AlertDialogAction>
                 <AlertDialogFooter className="mt-6">
                 </AlertDialogFooter>
             </AlertDialogContent>
