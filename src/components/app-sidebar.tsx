@@ -1,6 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarSeparator } from "@/components/ui/sidebar";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, } from "@/components/ui/dropdown-menu";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarSeparator } from "@/components/ui/sidebar";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { Home, Inbox, Settings, User, LogOut, TestTube, EllipsisVertical } from "lucide-react";
@@ -123,7 +122,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
+                            <DropdownMenuTrigger>
                                 <SidebarMenuButton size="lg" className="w-full justify-between">
                                     <div className="flex items-center gap-3">
                                         <Avatar className="h-8 w-8 border-2 border-sky-400">
@@ -132,6 +131,7 @@ export function AppSidebar() {
                                                 <span className="text-sky-500">EA</span>
                                             </AvatarFallback>
                                         </Avatar>
+
                                         <div className="flex flex-col text-left text-sm leading-tight">
                                             <span className="font-medium text-sky-900">Edgar Augusto</span>
                                             <span className="text-sky-800 text-xs">
@@ -145,12 +145,11 @@ export function AppSidebar() {
                             </DropdownMenuTrigger>
 
                             <DropdownMenuContent className="w-56" align="end" side="top">
-                                <DropdownMenuLabel>Minha conta</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-
                                 <DropdownMenuItem>
-                                    <User />
-                                    <span>Perfil</span>
+                                    <Link to="/profile">
+                                        <User className="mr-2" />
+                                        <span>Perfil</span>
+                                    </Link>
                                 </DropdownMenuItem>
 
                                 <DropdownMenuItem>

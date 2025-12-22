@@ -40,6 +40,7 @@ export default function TicketModal({ open, onClose }: TicketModalProps) {
         }
 
         toast.success("Chamado enviado com sucesso!");
+        onClose();
 
         setTitle("");
         setDescription("");
@@ -48,28 +49,29 @@ export default function TicketModal({ open, onClose }: TicketModalProps) {
     };
 
     return (
-        <AlertDialog open={open} onOpenChange={setOpen}>
+        <AlertDialog open={open} onOpenChange={onClose}>
             <AlertDialogContent className="sm:max-w-lg w-full">
                 <AlertDialogHeader>
                     <Headset className="w-6 h-6 text-primary" />
                     <AlertDialogTitle>Registrar chamado</AlertDialogTitle>
                     <AlertDialogDescription>
-                        Preencha os detalhes do seu chamado técnico e envie para o departamento responsável.
+                        Descreva o problema para que o time técnico possa atuar rapidamente.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
 
                 <div className="flex flex-col gap-4 mt-4">
                     <Input
-                        type="text"
                         placeholder="Título do chamado"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
+
                     <Textarea
-                        placeholder="Descrição detalhada do problema"
+                        placeholder="Descrição detalhada"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
+
                     <Input
                         type="email"
                         placeholder="Seu email"
@@ -77,40 +79,34 @@ export default function TicketModal({ open, onClose }: TicketModalProps) {
                         onChange={(e) => setEmail(e.target.value)}
                     />
 
-                    {/* Combobox para categoria do problema */}
                     <Popover open={comboOpen} onOpenChange={setComboOpen}>
                         <PopoverTrigger asChild>
-                            <Button
-                                variant="outline"
-                                role="combobox"
-                                className="w-full justify-between"
-                            >
-                                {category || "Selecione o tipo de problema"}
-                                <ChevronsUpDown className="ml-2 opacity-50 w-4 h-4" />
+                            <Button variant="outline" className="justify-between">
+                                {category || "Selecione a categoria"}
+                                <ChevronsUpDown className="h-4 w-4 opacity-50" />
                             </Button>
                         </PopoverTrigger>
                         <PopoverContent className="p-0">
                             <Command>
-                                <CommandInput placeholder="Pesquisar..." className="h-9" />
+                                <CommandInput placeholder="Pesquisar..." />
                                 <CommandList>
-                                    <CommandEmpty>Nenhuma categoria encontrada.</CommandEmpty>
+                                    <CommandEmpty>Nenhuma opção encontrada.</CommandEmpty>
                                     <CommandGroup>
-                                        {categories.map((cat) => (
+                                        {categories.map(category => (
                                             <CommandItem
-                                                key={cat}
-                                                value={cat}
+                                                key={category}
+                                                value={category}
                                                 onSelect={() => {
-                                                    setCategory(cat);
-                                                    setComboOpen(false);
+                                                    setCategory(category)
+                                                    setComboOpen(false)
                                                 }}
                                             >
-                                                {cat}
+                                                {category}
                                                 <Check
                                                     className={cn(
                                                         "ml-auto",
-                                                        category === cat ? "opacity-100" : "opacity-0"
+                                                        category === category ? "opacity-100" : "opacity-0"
                                                     )}
-                                                    size={16}
                                                 />
                                             </CommandItem>
                                         ))}
@@ -122,6 +118,12 @@ export default function TicketModal({ open, onClose }: TicketModalProps) {
                 </div>
 
                 <AlertDialogFooter className="mt-6">
+                    <AlertDialogCancel onClick={onClose}>
+                        Cancelar
+                    </AlertDialogCancel>
+                    <AlertDialogAction onClick={handleSubmit}>
+                        Enviar chamado
+                    </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
