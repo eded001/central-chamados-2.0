@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# Central de Chamados 2.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface moderna para gerenciamento de chamados, construída com **React + TypeScript + Vite** e organizada em páginas de dashboard, solicitações, configurações, perfil, conta e testes.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS 4
+- Radix UI
+- Base UI
+- Zod
+- Lucide React
+- Sonner
 
-## React Compiler
+## Estrutura funcional
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+As rotas atuais incluem:
 
-## Expanding the ESLint configuration
+- `/` — Dashboard
+- `/requests` — Solicitações
+- `/settings` — Configurações
+- `/profile` — Perfil
+- `/tests` — Testes
+- `/about` — Sobre
+- `/account` — Conta
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Executando localmente
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/eded001/central-chamados-2.0.git
+cd central-chamados-2.0
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run preview
 ```
+
+## Objetivo técnico
+
+O projeto serve como evolução de uma central de atendimento, com foco em composição de interface, organização por rotas, componentes reutilizáveis e experiência de uso consistente.
+
+## Status
+
+Este repositório contém atualmente a camada frontend da aplicação. A documentação descreve somente funcionalidades e tecnologias presentes no código atual.
